@@ -111,7 +111,17 @@
 
       </div>
 
-      <div class="card" style="margin-top:40px;padding:32px;">
+      <div class="card" id="cost-calculator" style="margin-top:40px;padding:32px;">
+        <h3 style="font-size:1.05rem;margin-bottom:6px;">What would you actually pay?</h3>
+        <p style="font-size:.9rem;margin-bottom:20px;">Overage fees mean the cheapest plan isn't always the one with the lowest base price. Enter your expected monthly participants to see the real cost on every plan.</p>
+        <div class="field" style="max-width:320px;margin-bottom:24px;">
+          <label for="calc-participants">Participants per month</label>
+          <input type="number" id="calc-participants" min="0" step="10" value="400" inputmode="numeric">
+        </div>
+        <div class="grid grid-4" id="calc-results"></div>
+      </div>
+
+      <div class="card" style="margin-top:24px;padding:32px;">
         <h3 style="font-size:1.05rem;margin-bottom:14px;">Every plan includes</h3>
         <div class="grid grid-2" style="gap:10px;">
           <div style="display:flex;flex-direction:column;gap:10px;">
