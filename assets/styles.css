@@ -169,7 +169,10 @@ ul{margin:0;padding:0;}
 .save-badge{background:rgba(33,230,161,0.15);color:var(--success);font-size:.78rem;font-weight:700;padding:4px 10px;border-radius:999px;}
 
 .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;}
+.pricing-grid-4{grid-template-columns:repeat(4,1fr);}
+@media(max-width:1100px){.pricing-grid-4{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:900px){.pricing-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto;}}
+@media(max-width:560px){.pricing-grid-4{grid-template-columns:1fr;max-width:440px;margin:0 auto;}}
 .price-card{
   background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
   padding:34px 28px;display:flex;flex-direction:column;
