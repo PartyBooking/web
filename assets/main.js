@@ -15,14 +15,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const calcInput = document.querySelector('#calc-participants');
   const calcResults = document.querySelector('#calc-results');
-  if (calcInput && calcResults) {
-    const PLANS = [
-      { id: 'standard', name: 'Standard', price: 40, included: 200, overage: 0.40 },
-      { id: 'growth', name: 'Growth', price: 80, included: 400, overage: 0.22 },
-      { id: 'premium', name: 'Premium', price: 200, included: 1500, overage: 0.18 },
-      { id: 'enterprise', name: 'Enterprise', price: 400, included: Infinity, overage: 0 },
-    ];
+  // Plan figures are read off the pricing cards' data-* attributes rather than
+  // duplicated here. They were hardcoded before and silently went stale when
+  // the cards were repriced (Premium was left at £200/1500 and Enterprise at
+  // £400 long after they became £120/800 and £300), so the calculator quoted
+  // Growth at £168 for 800 participants when Premium was really £120 — wrong
+  // plan recommended AND overquoted. One number per plan, in the markup.
+  const PLANS = Array.from(document.querySelectorAll('.price-card[data-plan-id]')).map(card => ({
+    id: card.dataset.planId,
+    name: (card.querySelector('.plan-name') || {}).textContent.trim(),
+    price: parseFloat(card.dataset.price),
+    included: card.dataset.included === 'unlimited' ? Infinity : parseInt(card.dataset.included, 10),
+    overage: parseFloat(card.dataset.overage) || 0,
+  }));
 
+  if (calcInput && calcResults && PLANS.length) {
     function render() {
       const participants = Math.max(0, parseInt(calcInput.value, 10) || 0);
       const costs = PLANS.map(p => {
