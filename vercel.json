@@ -1,14 +1,11 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-
-  "//": "PARKED WHILE TESTING. index.html is the coming-soon page; the real homepage is preserved untouched as home.html, alongside pricing/features/info/terms. Redirects (not rewrites) are used because Vercel applies rewrites only AFTER the filesystem is checked, so a rewrite never fires for a path that has a real file. TO RESTORE: delete this redirects block, rename index.html back to coming-soon.html and home.html back to index.html, and remove the noindex meta tag.",
-
   "redirects": [
-    { "source": "/home",     "destination": "/", "permanent": false },
-    { "source": "/pricing",  "destination": "/", "permanent": false },
+    { "source": "/home", "destination": "/", "permanent": false },
+    { "source": "/pricing", "destination": "/", "permanent": false },
     { "source": "/features", "destination": "/", "permanent": false },
-    { "source": "/info",     "destination": "/", "permanent": false },
-    { "source": "/terms",    "destination": "/", "permanent": false }
+    { "source": "/info", "destination": "/", "permanent": false },
+    { "source": "/terms", "destination": "/", "permanent": false }
   ]
 }
