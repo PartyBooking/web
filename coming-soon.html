@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TargetBooker — Coming soon</title>
+<meta name="description" content="Booking software for activity venues. Currently in testing with our launch venues.">
+<!-- Kept out of search results while the real site is parked. Remove this
+     line at the same time as the rewrite in vercel.json. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/assets/Favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap">
+<style>
+  :root{
+    --bg:#07070d;
+    --surface:#12121f;
+    --border:rgba(255,255,255,0.08);
+    --text:#f4f4f8;
+    --text-dim:#a4a4b8;
+    --text-faint:#6b6b82;
+    --accent:#009fe3;
+    --accent-2:#00e5ff;
+    --accent-3:#7c5cff;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:32px 22px;
+    position:relative;
+    overflow-x:hidden;
+  }
+  /* Soft brand glow behind the card — decorative only */
+  body::before{
+    content:"";
+    position:absolute;
+    top:-30vh;left:50%;
+    width:min(900px,120vw);height:min(900px,120vw);
+    transform:translateX(-50%);
+    background:radial-gradient(circle at 50% 50%, rgba(0,159,227,0.16), rgba(124,92,255,0.10) 42%, transparent 68%);
+    pointer-events:none;
+  }
+  main{
+    position:relative;
+    width:100%;
+    max-width:560px;
+    text-align:center;
+  }
+  .logo{
+    width:170px;max-width:60%;height:auto;
+    display:block;margin:0 auto 34px;
+  }
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:6px 14px;margin-bottom:22px;
+    border:1px solid var(--border);
+    border-radius:99px;
+    background:var(--surface);
+    font-size:12px;font-weight:600;
+    letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--text-dim);
+  }
+  .dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--accent-2);
+    box-shadow:0 0 0 4px rgba(0,229,255,0.14);
+  }
+  h1{
+    font-family:Sora,Inter,sans-serif;
+    font-weight:800;
+    font-size:clamp(30px,6.4vw,46px);
+    line-height:1.1;
+    letter-spacing:-0.03em;
+    margin:0 0 18px;
+    text-wrap:balance;
+  }
+  h1 .grad{
+    background:linear-gradient(100deg,var(--accent) 0%,var(--accent-2) 45%,var(--accent-3) 100%);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;
+  }
+  p{
+    font-size:16px;line-height:1.65;
+    color:var(--text-dim);
+    margin:0 auto 14px;
+    max-width:46ch;
+  }
+  .contact{
+    margin-top:30px;
+    padding-top:24px;
+    border-top:1px solid var(--border);
+    font-size:14px;
+    color:var(--text-faint);
+  }
+  .contact a{
+    color:var(--accent-2);
+    text-decoration:none;
+    font-weight:600;
+  }
+  .contact a:hover{text-decoration:underline}
+  .contact a:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;border-radius:3px}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+  <main>
+    <img class="logo" src="/assets/Logo.png" alt="TargetBooker">
+
+    <span class="badge"><span class="dot"></span> In testing</span>
+
+    <h1>Booking software for <span class="grad">activity venues</span></h1>
+
+    <p>
+      Online bookings, digital waivers, automated emails and payments — built for
+      laser tag, paintball, archery and axe throwing.
+    </p>
+    <p>
+      We're currently testing with our first venues. The full site will be back
+      shortly.
+    </p>
+
+    <div class="contact">
+      Already working with us? Sign in at
+      <a href="https://app.targetbooker.com">app.targetbooker.com</a><br>
+      Anything else — <a href="mailto:james@ravecreative.co.uk">james@ravecreative.co.uk</a>
+    </div>
+  </main>
+</body>
+</html>

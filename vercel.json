@@ -1,4 +1,10 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+
+  "//": "PARKED WHILE TESTING. Every path serves coming-soon.html; the real pages (index, pricing, features, info, terms) are untouched in this repo. To put the site back: delete the 'rewrites' block below and the noindex meta tag in coming-soon.html, then redeploy. Assets stay reachable so the parked page can load the logo and favicon.",
+
+  "rewrites": [
+    { "source": "/((?!assets/).*)", "destination": "/coming-soon.html" }
+  ]
 }
